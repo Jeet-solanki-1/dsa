@@ -29,44 +29,24 @@
 # Input: numbers = [-1,0], target = -1
 # Output: [1,2]
 # Explanation: The sum of -1 and 0 is -1. Therefore index1 = 1, index2 = 2. We return [1, 2].
-
 from typing import List
-class Solution:
-    def twoSum(self, numbers: List[int],target: int) -> List[int]:
-        left,right=0,len(numbers)-1
-        # use two pointers moving towards each other; stop when they cross
-        while left < right:
-            current_sum = numbers[left]+numbers[right]
-            if current_sum == target:
-                return [left+1,right+1]
-            else:
-                if current_sum<target:
-                    left+=1
+class Sol:
+    def twoSum(self,nums:List[int],t:int) -> List[int]:
+        l,r=0,len(nums)-1
+        while l<=r:
+            temp = nums[l]+nums[r]
+            if t==temp:
+                return [l,r]
+            else :
+                if temp<t:
+                    l+=1
                 else:
-                    right-=1
+                    r-=1
 
         return []
     
-if __name__ == "__main__":
-    s = Solution()
-    examples = [
-        ([2,7,11,15], 9),
-        ([2,3,4], 6),
-        ([-1,0], -1),
-        ([1,2,3,4], 3),
-    ]
-    for nums, tgt in examples:
-        print(f"numbers={nums}, target={tgt} -> {s.twoSum(nums, tgt)}")
-
-
-
-
-        
-
-
-
-
-
-
-
-        
+if __name__ =="__main__":
+    s = Sol()
+    numbers = [-1,0]
+    target = 0
+    print(f"ans: {s.twoSum(nums=numbers,t=target)}")
