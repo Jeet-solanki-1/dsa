@@ -38,23 +38,19 @@
 # Output: 5, nums = [0,1,2,3,4,_,_,_,_,_]
 # Explanation: Your function should return k = 5, with the first five elements of nums being 0, 1, 2, 3, and 4 respectively.
 # It does not matter what you leave beyond the returned k (hence they are underscores).
+
 from typing import List
-class Sol:
-    def removeDuplicate(self,nums:List[int]) -> None:
-        n=len(nums)
+class Sol():
+    def remove_duplicates(self,nums:list[int])->None:
         slow=0
-        for fast in range(0,n-1):
+        for fast in range(len(nums)-1):
             if slow==0 or nums[fast]!=nums[fast+1]:
                 nums[slow]=nums[fast+1]
                 slow+=1
-            
-        for i in range(slow,n):
-            nums[i]=0
+        
+        print(nums[:slow])
 
-        print(f"{slow}, nums={nums}")
-
-if __name__ =="__main__":
-    s = Sol()
+if __name__=="__main__":
+    s=Sol()
     nums = [0,0,1,1,1,2,2,3,3,4]
-    s.removeDuplicate(nums=nums)
-    
+    s.remove_duplicates(nums=nums)

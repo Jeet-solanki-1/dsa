@@ -15,8 +15,8 @@
 # Input: nums = [0]
 # Output: [0]
 from typing import List
-class Sol:
-    def movZ(self,nums:List[int]) ->None:
+class Sol():
+    def move_all_zeros(self,nums:list[int])->None:
         slow=0
         for fast in range(len(nums)):
             if nums[fast]!=0:
@@ -25,11 +25,8 @@ class Sol:
         
         for i in range(slow,len(nums)):
             nums[i]=0
-        
         print(nums)
-        
-
 if __name__=="__main__":
     s=Sol()
-    nums = [1]
-    s.movZ(nums=nums)
+    nums = [0,1,0,3,12]
+    s.move_all_zeros(nums=nums)

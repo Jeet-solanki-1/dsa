@@ -29,24 +29,27 @@
 # Input: numbers = [-1,0], target = -1
 # Output: [1,2]
 # Explanation: The sum of -1 and 0 is -1. Therefore index1 = 1, index2 = 2. We return [1, 2].
+
 from typing import List
 class Sol:
-    def twoSum(self,nums:List[int],t:int) -> List[int]:
+    def two_sum(self,nums:list[int],t:int) -> list[int]:
         l,r=0,len(nums)-1
         while l<=r:
-            temp = nums[l]+nums[r]
-            if t==temp:
-                return [l,r]
-            else :
-                if temp<t:
+            c = nums[l]+nums[r]
+            if c==t:
+                return [l+1,r+1]
+            else:
+                if c<t:
                     l+=1
                 else:
                     r-=1
-
+        
         return []
-    
-if __name__ =="__main__":
-    s = Sol()
-    numbers = [-1,0]
-    target = 0
-    print(f"ans: {s.twoSum(nums=numbers,t=target)}")
+
+if __name__=="__main__":
+    s=Sol()
+    numbers = [2,3,4]
+    target = 6
+    out= s.two_sum(nums=numbers,t=target)
+    print(out)
+
