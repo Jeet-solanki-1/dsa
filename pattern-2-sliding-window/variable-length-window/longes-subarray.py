@@ -1,4 +1,5 @@
-# Scenario: Given an array of positive integers, find the longest sub-array whose sum is less than or equal to $S$ (a target sum).
+# Scenario:
+#  Given an array of positive integers, find the longest sub-array whose sum is less than or equal to $S$ (a target sum).
 
 from typing import List
 class Sol:
